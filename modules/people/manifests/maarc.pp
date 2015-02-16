@@ -1,8 +1,11 @@
 class people::maarc {
 
   # TODO - add transmit
+  # TODO - add FreeDiskSpace
   # TODO - add Quartz and Inkscape 
   # TODO - add Libreoffice (version < 4.4.0 e.g. 4.3.5 ... stable one ...) 
+  # TODO - add Fantastical https://flexibits.com/fantastical
+  # TODO - add Vagrant / Dropbox
 
   ############################################################
   # OS X
