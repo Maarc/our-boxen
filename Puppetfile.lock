@@ -99,6 +99,11 @@ GITHUBTARBALL
     nmap (1.0.3)
 
 GITHUBTARBALL
+  remote: boxen/puppet-nodejs
+  specs:
+    nodejs (4.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-onepassword
   specs:
     onepassword (1.1.5)
@@ -261,6 +266,7 @@ DEPENDENCIES
   module_data (= 0.0.3)
   mymissingmodules (= 1.0.13)
   nmap (= 1.0.3)
+  nodejs (= 4.0.0)
   onepassword (= 1.1.5)
   onyx (= 1.2.0)
   osx (= 2.8.0)

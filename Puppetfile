@@ -1,4 +1,4 @@
-# This file manages Puppet module dependencies.
+# This file maÏages Puppet module dependencies.
 #
 # It works a lot like Bundler. We provide some core modules by
 # default. This ensures at least the ability to construct a basic
@@ -51,7 +51,7 @@ github "homebrew",    "1.11.2"
 github "hub",         "1.3.0"
 github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
 #github "nginx",      "1.4.4"
-#github "nodejs",     "4.0.0"
+github "nodejs",      "4.0.0"
 #github "openssl",    "1.0.0"
 #github "phantomjs",  "2.3.0"
 github "pkgconfig",   "1.0.0"
