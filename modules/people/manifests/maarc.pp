@@ -1,4 +1,5 @@
 class people::maarc {
+
   # Note: in order to reinstall / delete an app, remove the corresponding file in /var/db/.puppet_appdmg_installed_APPLICATIONNAME
 
   # TODO add Fuse for osx http://sourceforge.net/projects/osxfuse/files/osxfuse-2.7.5/osxfuse-2.7.5.dmg/download
@@ -9,6 +10,12 @@ class people::maarc {
   # TODO - add Fantastical https://flexibits.com/fantastical
   # TODO - add transmit
   # TODO - add chrome
+  # TODO - add acrobat reader
+  # TODO - add gitbook
+  # TODO - add airmail latest
+  # TODO - add XChat
+  # TODO - add automator script for the token
+  # TODO - add vagrant plugin for sublime
 
   ############################################################
   # OS X
@@ -60,7 +67,10 @@ class people::maarc {
   package { 'bash': ensure => 'present'}
   package { 'maven': ensure => 'present'}
   package { 'pstree': ensure => 'present'}
-  package { 'gs': ensure => 'present'}
+  package { 'python3': ensure => 'present'}
+  package { 'oath-toolkit': ensure => 'present'}
+  # FIXME ... should work!
+  # package { 'gs': ensure => 'present'}
   package { 'watch': ensure => 'present'}
   package { 'graphviz': ensure => 'present'}
   package { 'docker': ensure => 'present'}
@@ -68,7 +78,8 @@ class people::maarc {
   # https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
   package { 'bash-completion': ensure => 'present'}
   package { 'git': ensure => 'present'}
-  
+  package { 'coreutils': ensure => 'present'}
+
   class { 'intellij': edition => 'ultimate', version => '14.0.2' }
 
   ####### NodeJS
@@ -116,6 +127,7 @@ class people::maarc {
   }
 
   class { 'vagrant':
+    completion => true,
     version => '1.7.2'
   }
 
