@@ -201,7 +201,7 @@ global ruby version, service ports, etc). This repository supplies a
 starting point for your Hiera configuration at `config/hiera.yml`, and an
 example data file at `hiera/common.yaml`. See those files for more details.
 
-The default `config/hiera.yaml` is configured with a hierarchy that allows
+The default `config/hiera.yml` is configured with a hierarchy that allows
 individuals to have their own hiera data file in
 `hiera/users/{github_login}.yaml` which augments and overrides
 site-wide values in `hiera/common.yaml`. This default is, as with most of the

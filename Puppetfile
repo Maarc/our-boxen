@@ -1,4 +1,4 @@
-# This file maÏages Puppet module dependencies.
+# This file manages Puppet module dependencies.
 #
 # It works a lot like Bundler. We provide some core modules by
 # default. This ensures at least the ability to construct a basic
@@ -38,7 +38,7 @@ github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
 
-github "brewcask",    "0.0.4"
+github "brewcask",    "0.0.6"
 # Dnsmasq provides network infrastructure for small networks: DNS, DHCP, router advertisement and network boot.
 #github "dnsmasq",     "2.0.1"
 # Foreman is an open source project that gives system administrators the power to easily automate repetitive tasks, quickly deploy applications, and proactively manage servers, on-premises or in the cloud.
