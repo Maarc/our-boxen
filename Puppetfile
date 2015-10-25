@@ -29,11 +29,11 @@ end
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
-github "boxen", "3.10.1"
+github "boxen", "3.11.0"
 
 # Support for default hiera data in modules
 
-github "module_data", "0.0.3", :repo => "ripienaar/puppet-module-data"
+github "module_data", "0.0.4", :repo => "ripienaar/puppet-module-data"
 
 # Core modules for a basic development environment. You can replace
 # some/most of these if you want, but it's not recommended.
@@ -43,28 +43,32 @@ github "brewcask",    "0.0.4"
 #github "dnsmasq",     "2.0.1"
 # Foreman is an open source project that gives system administrators the power to easily automate repetitive tasks, quickly deploy applications, and proactively manage servers, on-premises or in the cloud.
 github "foreman",     "1.2.0"
-github "gcc",         "2.2.0"
-github "git",         "2.7.1"
+github "gcc",         "3.0.2"
+github "git",         "2.7.92"
 github "go",          "2.1.0"
 # Homebrew installs the stuff you need that Apple didn’t.
-github "homebrew",    "1.11.2"
-github "hub",         "1.3.0"
-github "inifile",     "1.1.1", :repo => "puppetlabs/puppetlabs-inifile"
-#github "nginx",      "1.4.4"
-github "nodejs",      "4.0.0"
-#github "openssl",    "1.0.0"
-#github "phantomjs",  "2.3.0"
+github "homebrew",    "1.13.0"
+github "hub",         "1.4.1"
+github "inifile",     "1.4.1", :repo => "puppetlabs/puppetlabs-inifile"
+#github "nginx",       "1.4.6"
+github "nodejs",      "5.0.0"
+#github "openssl",     "1.0.0"
+#github "phantomjs",   "3.0.0"
 github "pkgconfig",   "1.0.0"
-github "repository",  "2.3.0"
-github "ruby",        "8.1.7"
-github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
+github "repository",  "2.4.1"
+github "ruby",        "8.5.2"
+github "stdlib",      "4.7.0", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at https://github.com/boxen.
 # References - http://rosslawley.co.uk/posts/automate-all-the-things/
 # Nice tutorial - http://www.sitepoint.com/boxen-quit-worrying-tools/
-
+# github "elasticsearch", "2.8.0"
+# github "mysql",         "2.0.1"
+# github "postgresql",  "4.0.1"
+# github "redis",       "3.1.0"
+# github "sysctl",      "1.0.1"
 
 # General settings for OSX ...
 github "osx",             "2.8.0"
@@ -101,7 +105,6 @@ github "mymissingmodules", "1.0.13", :repo => "maarc/puppet-mymissingmodules"
 github "transmit",        "1.0.3", :repo => "maarc/puppet-transmit"
 github "tor",             "1.0.2"
 github "eclipse",         "2.5.0"
-
 
 # MAYBE
 #github "slate",           "1.0.25"
