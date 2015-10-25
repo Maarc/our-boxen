@@ -1,5 +1,5 @@
 class people::maarc {
-
+ 
   # Note: in order to reinstall / delete an app, remove the corresponding file in /var/db/.puppet_appdmg_installed_APPLICATIONNAME
 
   # TODO add Fuse for osx http://sourceforge.net/projects/osxfuse/files/osxfuse-2.7.5/osxfuse-2.7.5.dmg/download
@@ -15,6 +15,7 @@ class people::maarc {
   # TODO - add airmail latest
   # TODO - add XChat
   # TODO - add automator script for the token
+  # TODO - add ruby and "sudo gem install rhc" -> openshift client
   # TODO - add vagrant plugin for sublime
 
   ############################################################
@@ -79,6 +80,8 @@ class people::maarc {
   package { 'bash-completion': ensure => 'present'}
   package { 'git': ensure => 'present'}
   package { 'coreutils': ensure => 'present'}
+  package { 'tree': ensure => 'present'}
+  package { 'iftop': ensure => 'present'}
 
   class { 'intellij': edition => 'ultimate', version => '14.0.2' }
 
@@ -128,7 +131,7 @@ class people::maarc {
 
   class { 'vagrant':
     completion => true,
-    version => '1.7.2'
+    version => '1.7.4'
   }
 
 
