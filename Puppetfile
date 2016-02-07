@@ -98,6 +98,7 @@ github "fonts",           "0.0.3"
 github "dia",             "0.0.2"
 github "gimp",            "1.0.1"
 github "inkscape",        "1.0.4", :repo => "maarc/puppet-inkscape"
+github "appcleaner"	  "1.0.0"
 
 github "mymissingmodules", "1.0.13", :repo => "maarc/puppet-mymissingmodules"
 

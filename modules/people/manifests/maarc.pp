@@ -1,12 +1,12 @@
 class people::maarc {
- 
+
   # Note: in order to reinstall / delete an app, remove the corresponding file in /var/db/.puppet_appdmg_installed_APPLICATIONNAME
 
   # TODO add Fuse for osx http://sourceforge.net/projects/osxfuse/files/osxfuse-2.7.5/osxfuse-2.7.5.dmg/download
   # persist firefox bookmarks / sublime configuration
   # TODO - add FreeDiskSpace
-  # TODO - add Quartz and Inkscape 
-  # TODO - add Libreoffice (version < 4.4.0 e.g. 4.3.5 ... only the stable one ...) 
+  # TODO - add Quartz and Inkscape
+  # TODO - add Libreoffice (version < 4.4.0 e.g. 4.3.5 ... only the stable one ...)
   # TODO - add Fantastical https://flexibits.com/fantastical
   # TODO - add transmit
   # TODO - add chrome
@@ -47,7 +47,7 @@ class people::maarc {
   # http://www.titanium.free.fr/onyx.html
   #class { 'onyx':
   #  version => '2.9.4'
-  #}  
+  #}
 
   include fonts
 
@@ -57,7 +57,6 @@ class people::maarc {
 
   # 1.7u71 (jdk+jre)
   include java
-
   include sourcetree
 
   # Note ... brew repository is in '/opt/boxen/homebrew/'
@@ -66,24 +65,37 @@ class people::maarc {
   # FIXME issue with this package ... package { 'htop-osx': ensure => 'present'}
   # Note for bash install ... https://gist.github.com/samnang/1759336 and https://stackoverflow.com/questions/16416195/how-do-i-upgrade-bash-in-mac-osx-mountain-lion-and-set-it-the-correct-path
   package { 'bash': ensure => 'present'}
+  # https://github.com/bothecow/git-flow-completion/wiki/Install-Bash-git-completion
+  package { 'bash-completion': ensure => 'present'}
+
+  package { 'ant': ensure => 'present'}
   package { 'maven': ensure => 'present'}
+
   package { 'pstree': ensure => 'present'}
   package { 'python3': ensure => 'present'}
   package { 'oath-toolkit': ensure => 'present'}
   # FIXME ... should work!
-  # package { 'gs': ensure => 'present'}
+  package { 'gs': ensure => 'present'}
   package { 'watch': ensure => 'present'}
   package { 'graphviz': ensure => 'present'}
   package { 'docker': ensure => 'present'}
   package { 'boot2docker': ensure => 'present'}
-  # https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
-  package { 'bash-completion': ensure => 'present'}
   package { 'git': ensure => 'present'}
   package { 'coreutils': ensure => 'present'}
   package { 'tree': ensure => 'present'}
   package { 'iftop': ensure => 'present'}
+  # Used to build the documentation
+  package { 'pandoc': ensure => 'present'}
+  # Github extension
+  package { 'hub': ensure => 'present'}
+  package { 'ansible': ensure => 'present'}
 
-  class { 'intellij': edition => 'ultimate', version => '14.0.2' }
+  package { 'rbenv': ensure => 'present'}
+  package { 'ruby-build': ensure => 'present'}
+  package { 'ssh-copy-id': ensure => 'present'}
+  package { 'dos2unix': ensure => 'present'}
+
+  # class { 'intellij': edition => 'ultimate', version => '14.0.2' }
 
   ####### NodeJS
 
@@ -94,14 +106,22 @@ class people::maarc {
   class { 'nodejs::global': version => 'v0.12.0' }
 
   # install some npm modules
-  nodejs::module { 'bower': node_version => 'v0.12.0'}
-  nodejs::module { 'yo': node_version => 'v0.12.0'}
-  nodejs::module { 'grunt-cli': node_version => 'v0.12.0'}
-  nodejs::module { 'grunt': node_version => 'v0.12.0'}
-  nodejs::module { 'gulp': node_version => 'v0.12.0'}
-  nodejs::module { 'generator-webapp': node_version => 'v0.12.0'}
-  nodejs::module { 'grunt-bower-requirejs': node_version => 'v0.12.0'}
-  nodejs::module { 'generator-jhipster': node_version => 'v0.12.0'}
+
+  npm_module { 'bower for all nodes':
+    module       => 'bower',
+    version      => '~> 1.4.1',
+    node_version => '*',
+  }
+
+  ### FIXME ... convert all modules to the new format according https://github.com/boxen/puppet-nodejs
+  #nodejs::module { 'bower': node_version => 'v0.12.0'}
+  #nodejs::module { 'yo': node_version => 'v0.12.0'}
+  #nodejs::module { 'grunt-cli': node_version => 'v0.12.0'}
+  #nodejs::module { 'grunt': node_version => 'v0.12.0'}
+  #nodejs::module { 'gulp': node_version => 'v0.12.0'}
+  #nodejs::module { 'generator-webapp': node_version => 'v0.12.0'}
+  #nodejs::module { 'grunt-bower-requirejs': node_version => 'v0.12.0'}
+  #nodejs::module { 'generator-jhipster': node_version => 'v0.12.0'}
 
   include mymissingmodules::jd
 
@@ -118,7 +138,7 @@ class people::maarc {
   sublime_text::package { 'Dictionaries': source => 'titoBouzout/Dictionaries'}
   sublime_text::package { 'Indent XML': source => 'alek-sys/sublimetext_indentxml'}
 
-  
+
   ############################################################
   # Virtualization
   ############################################################
@@ -162,9 +182,11 @@ class people::maarc {
     version => '2.1.5'
   }
 
-  class { 'appcleaner':
-    version => '2.3'
-  }
+  include appcleaner
+  # FIXME ... remove (old syntax)
+  #class { 'appcleaner':
+  #  version => '2.2.3'
+  #}
 
   class { 'adobe_reader':
     version => '11.0.10'
